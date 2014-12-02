@@ -66,11 +66,11 @@ class TestController extends Controller {
     public  function actionInitAuthManager(){
           $auth = Yii::app()->authManager;
         $arrOps = array(
-            'index' => '日志列表',
-            'view' => '查看日志',
-            'create' => '添加日志',
-            'update' => '更新日志',
-            'delete' => '添加列表',
+            'index' => "日志列表",
+            "view" => "查看日志",
+            "create" => "添加日志",
+            "update" => "更新日志",
+            "delete" => "添加列表",
         );
         $auth->addOperation($arrOps);
 
