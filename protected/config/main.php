@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'xy',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -59,11 +59,11 @@ return array(
 		),
 
         'authManager' => array(
-            'class' => 'XgAuthManager',
+            'class' => 'XyAuthManager',
             'connectionID' => 'db',
-            'itemTable' => 'xg_auth_item',
-            'itemChildTable' => 'xg_auth_item_child',
-            'assignmentTable' => 'xg_auth_assignment',
+            'itemTable' => 'xy_auth_item',
+            'itemChildTable' => 'xy_auth_item_child',
+            'assignmentTable' => 'xy_auth_assignment',
 
         ),
 

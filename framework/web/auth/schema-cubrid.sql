@@ -8,35 +8,39 @@
  * @since 1.1.14
  */
 
-drop table if exists `AuthAssignment`;
-drop table if exists `AuthItemChild`;
+/*   'itemTable' => 'xy_auth_item',
+            'itemChildTable' => 'xy_auth_item_child',
+            'assignmentTable' => 'xy_auth_assignment',*/
+
+drop table if exists `xy_auth_assignment`;
+drop table if exists `xy_auth_item_child`;
 drop table if exists `AuthItem`;
 
-create table `AuthItem`
+create table `xy_auth_item`
 (
    `name`                 varchar(64) not null,
    `type`                 integer not null,
-   `description`          varchar(65535),
-   `bizrule`              varchar(65535),
-   `data`                 string,
+   `description`          varchar(4096),
+   `bizrule`              varchar(4096),
+   `data`                  varchar(4096),,
    primary key (`name`)
 );
 
-create table `AuthItemChild`
+create table `xy_auth_item_child`
 (
    `parent`               varchar(64) not null,
    `child`                varchar(64) not null,
    primary key (`parent`,`child`),
-   foreign key (`parent`) references `AuthItem` (`name`) on delete cascade on update restrict,
-   foreign key (`child`) references `AuthItem` (`name`) on delete cascade on update restrict
+   foreign key (`parent`) references `xy_auth_item` (`name`) on delete cascade on update restrict,
+   foreign key (`child`) references `xy_auth_item` (`name`) on delete cascade on update restrict
 );
 
-create table `AuthAssignment`
+create table `xy_auth_assignment`
 (
    `itemname`             varchar(64) not null,
    `userid`               varchar(64) not null,
-   `bizrule`              varchar(65535),
-   `data`                 string,
+   `bizrule`              varchar(4096),
+   `data`                  varchar(4096),
    primary key (`itemname`,`userid`),
-   foreign key (`itemname`) references `AuthItem` (`name`) on delete cascade on update restrict
+   foreign key (`itemname`) references `xy_auth_item` (`name`) on delete cascade on update restrict
 );
