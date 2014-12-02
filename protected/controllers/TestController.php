@@ -63,7 +63,7 @@ class TestController extends Controller {
         $auth->checkAccess('deletePost');
     }
 
-    public  function initAuthManager(){
+    public  function actionInitAuthManager(){
           $auth = Yii::app()->authManager;
         $arrOps = array(
             'index' => '日志列表',
