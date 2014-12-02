@@ -2,7 +2,7 @@
 
 // This is the database connection configuration.
 return array(
-	'connectionString' => 'mysql:host=localhost;dbname=xg',
+	'connectionString' => 'mysql:host=localhost;dbname=xy',
 	'emulatePrepare' => true,
 	'username' => 'root',
 	'password' => 'root',
